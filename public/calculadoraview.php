@@ -24,9 +24,9 @@
         echo "<br>";
         echo 'resta= '.$resta;
         echo "<br>";
-        echo 'multiplicación= '.$multiplicacion;
+        echo 'multiplicación= '.$multiplicacio;
         echo "<br>";
-        echo 'división= '.$division;
+        echo 'división= '.$divisio;
         ?>
     </h2>
 </header>
