@@ -19,5 +19,8 @@
     </h2>
 </header>
 <?php  print_r($_SERVER)?>
+<?php  foreach ($name as $name){
+    echo "<li>$name</li>";
+}?>
 </body>
 </html>
