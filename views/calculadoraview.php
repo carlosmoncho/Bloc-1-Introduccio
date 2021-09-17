@@ -18,16 +18,11 @@
 <header>
     <h2>
         <?php
-
         print_r($_GET);
-        echo "<br>";
-        echo 'suma= '.$suma;
-        echo "<br>";
-        echo 'resta= '.$resta;
-        echo "<br>";
-        echo 'multiplicación= '.$multiplicacion;
-        echo "<br>";
-        echo 'división= '.$division;
+        print_r('<br>suma= '.$suma.'<br>'.
+            'resta= '.$resta.'<br>'.
+            'multiplicación= '.$multiplicacion.'<br>'.
+            'división= '.$division);
         ?>
     </h2>
 </header>
