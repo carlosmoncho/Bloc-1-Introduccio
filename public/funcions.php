@@ -31,8 +31,8 @@ function insert($nomTaula, $array){
     if (!$nomTaula){
         return 'tens que insertar un nom de taula';
     }
-    $formato = 'insert into %s ("%s") values ("%s")';
-    $arrayKeySeparadoPorComas = implode("\",\"", array_keys($array));
+    $formato = 'insert into %s (%s) values ("%s")';
+    $arrayKeySeparadoPorComas = implode(",", array_keys($array));
     $arraySeparadoPorComas = implode("\",\"", $array);
     return sprintf($formato,$nomTaula,$arrayKeySeparadoPorComas,$arraySeparadoPorComas);
 }
