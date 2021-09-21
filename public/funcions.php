@@ -1,27 +1,15 @@
 <?php
+require_once ("../kernel.php");
 $contrasenya=$_GET['contrasenya'];
-
+$nomTaula=$_GET['taula'];
 $traduccions=array(
-    "Monkey" => 'Mono',
-    "Car" => 'coche',
-    "Apple" => 'manzana',
-    "White" => 'Blanco',
-    "Night" => 'Noche',
-    "Arrow" => 'Flecha',
-    "Hand" => 'Mano',
-    "Foot" => 'Pie',
-    "Face" => 'Cara',
-    "Hello" => 'Hola');
-
-print_r(insert('taula1',$traduccions));
-
-if (contrasenyaSegura($contrasenya)){
-    echo 'si esta be';
-}else{
-    echo 'no esta be';
-}
+    "coche" => 'coche 1',
+    "Marca" => 'Honda',
+    "Modelo" => 'Civic',
+    "Matricula" => '0959 HTJ');
 
 function contrasenyaSegura($contrasenya){
+
     if (strlen($contrasenya) < 8){
         return false;
     }
@@ -34,16 +22,20 @@ function contrasenyaSegura($contrasenya){
     if (!preg_match('`[0-9]`',$contrasenya)){
         return false;
     }
-    if (!preg_match('`[/_=+*$@]`',$contrasenya)){
+    if (!preg_match('`[/_=+*$@.]`',$contrasenya)){
         return false;
     }
     return true;
 }
 
 function insert($nomTaula, $array){
+    if (!$nomTaula){
+        return 'tens que insertar un nom de taula';
+    }
     $formato = 'insert into %s ("%s") values ("%s")';
     $arrayKeySeparadoPorComas = implode("\",\"", array_keys($array));
     $arraySeparadoPorComas = implode("\",\"", $array);
     return sprintf($formato,$nomTaula,$arrayKeySeparadoPorComas,$arraySeparadoPorComas);
 }
+require($rutavistes."funcions.view.php");
 
