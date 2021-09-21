@@ -18,11 +18,7 @@
 <header>
     <h2>
         <?php
-        print_r($_GET);
-        print_r('<br>suma= '.$suma.'<br>'.
-            'resta= '.$resta.'<br>'.
-            'multiplicación= '.$multiplicacion.'<br>'.
-            'división= '.$division);
+        echo calcular($x,$y,$funcio);
         ?>
     </h2>
 </header>
