@@ -36,5 +36,5 @@ function insert($nomTaula, $array){
     $arraySeparadoPorComas = implode("\",\"", $array);
     return sprintf($formato,$nomTaula,$arrayKeySeparadoPorComas,$arraySeparadoPorComas);
 }
-require($rutavistes."funcions.view.php");
+require($route_views."funcions.view.php");
 

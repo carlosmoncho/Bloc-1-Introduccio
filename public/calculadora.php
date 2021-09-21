@@ -17,7 +17,6 @@ function calcular($x,$y,$funcio){
         return 'El resultat es= '.divisio($x,$y);
     }
     return "La variable funcio que has insertat no esta disponible o no existeix.";
-
 }
 
 function divisio($x, $y){
@@ -36,4 +35,4 @@ function suma($x, $y){
     return $x+$y;
 }
 
-require($rutavistes."calculadoraview.php");
+require($route_views."calculadoraview.php");

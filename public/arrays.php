@@ -38,10 +38,10 @@ $traduccions=array(
         "Face" => 'Cara',
         "Hello" => 'Hola');
 
-require($rutavistes."arrays.view.php");
-
 function mostrar_array($array){
     foreach ($array as $nom){
         echo $nom.', ';
     }
 }
+
+require($route_views."arrays.view.php");

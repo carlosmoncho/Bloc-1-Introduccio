@@ -33,4 +33,4 @@ function començaPer($nom,$prefix){
         return 'No existeix la variable prefix';
     }
 }
-require($rutavistes."cadenes.view.php");
+require($route_views."cadenes.view.php");

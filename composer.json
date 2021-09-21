@@ -1,0 +1,6 @@
+{
+    "name": "vagrant/php",
+    "require": {
+        "filp/whoops": "^2.14"
+    }
+}

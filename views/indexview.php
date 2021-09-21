@@ -15,7 +15,6 @@
 <body>
 <header>
     <h2>
-        <?= $greetings; ?>
     </h2>
 </header>
 <?php  print_r($_SERVER)?>
