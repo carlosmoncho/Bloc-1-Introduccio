@@ -9,7 +9,6 @@ $traduccions=array(
     "Matricula" => '0959 HTJ');
 
 function contrasenyaSegura($contrasenya){
-
     if (strlen($contrasenya) < 8){
         return false;
     }
