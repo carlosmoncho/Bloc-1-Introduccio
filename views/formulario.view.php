@@ -26,7 +26,7 @@
     </h2>
 </header>
 <div style="background: aliceblue; margin: 50px" class="w-50 p-3">
-    <form method="POST" action="formulario.php">
+    <form method="POST" action="formulario.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="inputnom">Nom:</label>
             <input name="nom" type="text" class="form-control" id="inputnom" aria-describedby="inputnom" placeholder="Nom" >
@@ -63,7 +63,7 @@
             </select>
         </div>
         <div class="custom-file">
-            <input name="archivo" id="archivo" type="file"/>
+            <input type="file" name="foto" id="foto">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -30,7 +30,7 @@
     </h2>
 </header>
 <div style="background: aliceblue; margin: 50px" class="w-50 p-3">
-    <form method="POST" action="calculadora2.A.php">
+    <form method="POST" >
         <div class="form-group">
             <label for="inputY">Introduce la Y</label>
             <input name="Y" type="number" class="form-control" id="inputY" aria-describedby="inputY" placeholder="Introduce la Y" >

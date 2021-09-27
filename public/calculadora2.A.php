@@ -6,15 +6,15 @@ if (isPost() && cfsr()){
     $Y = isRequired('Y', $errors);
     $funcion = isRequired('funcion', $errors);
     $resultado = calcular($X,$Y,$funcion);
-
+    require($route_views."calculadora2.A.view.php");
 }else{
-    require("calculadora2.A.view.php");
+    require($route_views."calculadora2.A.view.php");
 }
 if (!count($errors)){
-    require_once("calculadora2.A.view.php");
+    require_once($route_views."calculadora2.A.view.php");
 }
 
-function isRequired($nomCamp, $errors){
+function isRequired($nomCamp, &$errors){
     if (empty($_POST[$nomCamp]) || $nomCamp === ""){
         $errors[] = "El $nomCamp es necesario";
         return null;
