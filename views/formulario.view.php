@@ -17,14 +17,19 @@
     <h2>
         <b>Formulario</b>
         <br>
-        <?php print_r($data);?>
+        <?php
+        if (!empty($errors)){
+            foreach ($errors as $error):?>
+                <p><?=$error?></p>
+            <?php endforeach;?>
+        <?php }?>
     </h2>
 </header>
 <div style="background: aliceblue; margin: 50px" class="w-50 p-3">
     <form method="POST" action="formulario.php">
         <div class="form-group">
             <label for="inputnom">Nom:</label>
-            <input name="nom" type="text" class="form-control" id="inputnom" aria-describedby="inputnom" placeholder="Nom" required>
+            <input name="nom" type="text" class="form-control" id="inputnom" aria-describedby="inputnom" placeholder="Nom" >
         </div>
         <div class="form-group">
             <label for="inputdata">Fecha naixement:</label>
@@ -52,15 +57,13 @@
             <label for="innputHobbies">Elige los hobbies</label>
             <select id="innputHobbies" class="form-control" name="hobbies">
                 <?php
-                $hobbies = array('musica', 'baloncesto', 'futbol','informatica','nadar');
                 foreach ($hobbies as $hobby){
                     ?> <option value=<?=$hobby?>><?=$hobby?></option>
                 <?php }?>
             </select>
         </div>
         <div class="custom-file">
-            <input type="file" class="foto" id="arxiu" name="arxiu" >
-            <label class="custom-file-label" for="validatedCustomFile">Selecciona un archivo</label>
+            <input name="archivo" id="archivo" type="file"/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
