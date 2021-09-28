@@ -18,6 +18,14 @@
         </h2>
     </header>
         <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>País</th>
+                <th>Dorsal</th>
+                <th>Posición</th>
+                <th>Goles</th>
+            </tr>
             <?php foreach ($jugadores as $jugador) {?>
                     <tr>
                         <td><?php print_r($jugador[4])?></td>
