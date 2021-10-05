@@ -1,5 +1,7 @@
 <?php
 namespace App;
+use DateTime;
+
 class Player{
     private $name;
     private $birthDay;
@@ -27,9 +29,11 @@ class Player{
     }
 
     public function age(){
-        $hoy = new DateTime();
-        $edad = $this->birthDay ->diff($hoy);
-        return $edad->y;
+        $dias = explode("/", $this->birthDay, 3);
+        $dias = mktime(0,0,0,$dias[1],$dias[0],$dias[2]);
+        $edad = (int)((time()-$dias)/31556926 );
+        return $edad;
+
     }
 
     public function score(){
