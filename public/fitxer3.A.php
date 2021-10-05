@@ -2,6 +2,7 @@
 require_once("../kernel.php");
 use App\Team;
 use App\Player;
+use App\Trainer;
 $arxiu = fopen("EjemploPlantillas.csv", "r");
 $equipo = new Team('Atletico de madrid');
 $jugadorPrueva = new Player('carlos',"31/01/2002",'spain',32,'FG',4,23,35,4,10);
@@ -11,7 +12,9 @@ while (($datos = fgetcsv($arxiu)) !== FALSE) {
         $equipo->singPlayer($player);
     }
 }
-$jugadorPrueva->Render();
+
+$trainer = new Trainer('manu','21/01/2002','spain',5,5,'Puto amo');
+$equipo->singPlayer($trainer);
 $equipo->Render();
 
 function filtrarPorEquipo($equipo){

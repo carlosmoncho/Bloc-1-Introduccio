@@ -26,7 +26,7 @@ class Team{
         require_once('../views/equipo.view.php');
     }
 
-    public function singPlayer($player){
+    public function singPlayer(Member $player){
         $this->players[]= $player;
     }
 }
