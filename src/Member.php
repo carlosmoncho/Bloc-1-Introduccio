@@ -1,11 +1,11 @@
 <?php
 namespace App;
 abstract class Member{
-    private $name;
-    private $birthDay;
-    private $country;
-    private $yellowCard;
-    private $redCard;
+    protected $name;
+    protected $birthDay;
+    protected $country;
+    protected $yellowCard;
+    protected $redCard;
 
     public function __construct($name, $birthDay, $country, $yellowCard, $redCard)
     {
