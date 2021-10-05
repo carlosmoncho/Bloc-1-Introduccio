@@ -3,7 +3,8 @@
     <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?= $jugador->getDorsal()?></div>
         <div class="card-body p-4">
-            <div class="text-center"><h5 class="fw-bolder"><?=$jugador->getName()?></h5>
+            <div class="text-center">
+                <h5 class="fw-bolder"><?=$jugador->getName()?></h5>
                 <h5 class="fw-bolder">Posicion: <?=$jugador->getPosition()?></h5>
                 <h5 class="fw-bolder">Goles: <?=$jugador->getGoals()?></h5>
                 <h5 class="fw-bolder">Partidos jugados: <?=$jugador->getMatches()?></h5>

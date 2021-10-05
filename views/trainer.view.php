@@ -1,5 +1,5 @@
 <div class="col mb-5">
-    <div class="card h-100">
+    <div class="card h-100" style="background-color: orange ">
         <div class="card-body p-4">
             <div class="text-center">
                 <h5 class="fw-bolder"><?=$trainer->getName()?></h5>
