@@ -13,7 +13,7 @@ while (($datos = fgetcsv($arxiu)) !== FALSE) {
     }
 }
 
-$trainer = new Trainer('manu','21/01/2002','spain',5,5,'Puto amo');
+$trainer = new Trainer('manu','21/01/2002','spain',5,5,'El señor entrenado');
 $equipo->singPlayer($trainer);
 $equipo->Render();
 
