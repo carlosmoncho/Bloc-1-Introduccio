@@ -3,7 +3,6 @@ require_once ("../kernel.php");
 use App\Alumno;
 $hobbies = array('musica', 'baloncesto', 'futbol','informatica','nadar');
 $errors = [];
-$alumnos = $query->selectAll('alumnes');
 $alumnoBuscado = $query->findById('alumnes','21688810C');
 if (isPost() && cfsr()){
     $nom = isRequired('nom', $errors);
