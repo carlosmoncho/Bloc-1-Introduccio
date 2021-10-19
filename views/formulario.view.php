@@ -26,7 +26,11 @@
     </h2>
 </header>
 <div style="background: aliceblue; margin: 50px" class="w-50 p-3">
-    <form method="POST" action="formulario.php" enctype="multipart/form-data">
+    <form method="POST" action="DB4.php" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="inputDni">DNI:</label>
+            <input name="dni" type="text" class="form-control" id="inputDni" aria-describedby="inputDni" placeholder="DNI" >
+        </div>
         <div class="form-group">
             <label for="inputnom">Nom:</label>
             <input name="nom" type="text" class="form-control" id="inputnom" aria-describedby="inputnom" placeholder="Nom" >
@@ -36,29 +40,25 @@
             <input name="data" type="date" class="form-control" id="inputdata" aria-describedby="inputdata" placeholder="Fecha naixement">
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="hombre" value="hombre" >
+            <input class="form-check-input" type="radio" name="sexo" id="hombre" value="2" >
             <label class="form-check-label" for="hombre">
                 Hombre
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="mujer" value="mujer" >
+            <input class="form-check-input" type="radio" name="sexo" id="mujer" value="1" >
             <label class="form-check-label" for="mujer">
                 Mujer
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="otro" value="otro" >
-            <label class="form-check-label" for="otro">
-                Otro
             </label>
         </div>
         <div class="form-group">
             <label for="innputHobbies">Elige los hobbies</label>
             <select id="innputHobbies" class="form-control" name="hobbies">
                 <?php
+                $i = 0;
                 foreach ($hobbies as $hobby){
-                    ?> <option value=<?=$hobby?>><?=$hobby?></option>
+                    $i++;
+                    ?> <option value=<?=$i?>><?=$hobby?></option>
                 <?php }?>
             </select>
         </div>
@@ -67,6 +67,45 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
+<div style="margin: 50px;">
+    <table border="1" style="text-align: center;">
+        <th>Nom</th>
+        <th>DNI</th>
+        <th>Data</th>
+        <th>Sexe</th>
+        <th>Hobby</th>
+
+        <?php foreach ($alumnos as $alumno): ?>
+            <tr>
+                <td><?=$alumno->Nom?></td>
+                <td><?=$alumno->dni?></td>
+                <td><?=$alumno->Data?></td>
+                <td><?=$alumno->Sexe?></td>
+                <td><?=$alumno->Hobby?></td>
+            </tr>
+        <?php endforeach; ?>
+
+    </table>
+</div>
+<div style="margin: 50px;">
+    <table border="1" style="text-align: center;">
+        <th>Nom</th>
+        <th>DNI</th>
+        <th>Data</th>
+        <th>Sexe</th>
+        <th>Hobby</th>
+        <?php foreach ($alumnoBuscado as $alumnoEncontrado): ?>
+        <tr>
+            <td><?=$alumnoEncontrado->Nom?></td>
+            <td><?=$alumnoEncontrado->dni?></td>
+            <td><?=$alumnoEncontrado->Data?></td>
+            <td><?=$alumnoEncontrado->Sexe?></td>
+            <td><?=$alumnoEncontrado->Hobby?></td>
+        </tr>
+        <?php endforeach; ?>
+
+    </table>
 </div>
 </body>
 </html>
