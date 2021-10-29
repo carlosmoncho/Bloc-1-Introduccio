@@ -1,5 +1,6 @@
 <?php
 require_once ("../kernel.php");
+require_once ("../myHelpers/myHelpers.php");
 $hobbies = array('musica', 'baloncesto', 'futbol','informatica','nadar');
 $errors = [];
 if (isPost() && cfsr()){
@@ -32,20 +33,4 @@ function isAfter($nomCamp,  &$errors){
         $errors[] = "La data te que ser anetrior";
     }
     return null;
-}
-function isRequired($nomCamp, &$errors){
-    if (empty($_POST[$nomCamp]) || $nomCamp === ""){
-        $errors[] = "El $nomCamp es necesario";
-        return null;
-    }else{
-        return trim(htmlspecialchars($_POST[$nomCamp]));
-    }
-}
-function isPost(){
-    return $_SERVER['REQUEST_METHOD'] === 'POST';
-}
-
-function cfsr(){
-    if (parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) != $_SERVER['HTTP_HOST']) die('Anti-CSRF');
-    else return true;
 }

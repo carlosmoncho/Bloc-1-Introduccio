@@ -1,5 +1,6 @@
 <?php
 require_once ("../kernel.php");
+require_once ("../myHelpers/myHelpers.php");
 $errors = [];
 if (isPost() && cfsr()){
     $X = isRequired('X', $errors);
@@ -14,23 +15,6 @@ if (!count($errors)){
     require_once($route_views."calculadora2.A.view.php");
 }
 
-function isRequired($nomCamp, &$errors){
-    if (empty($_POST[$nomCamp]) || $nomCamp === ""){
-        $errors[] = "El $nomCamp es necesario";
-        return null;
-    }else{
-        return trim(htmlspecialchars($_POST[$nomCamp]));
-    }
-}
-
-function isPost(){
-    return $_SERVER['REQUEST_METHOD'] === 'POST';
-}
-
-function cfsr(){
-    if (parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST) != $_SERVER['HTTP_HOST']) die('Anti-CSRF');
-    else return true;
-}
 function calcular($x,$y,$funcio){
     if (!$funcio){
         return "Tens que insertar una funcio per a que funcione";
