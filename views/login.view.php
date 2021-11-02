@@ -18,12 +18,10 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-    <p><?php $usuarioInvalido?></p>
     <form class="d-flex" action="/register.php">
         <button class="btn btn-outline-dark" type="submit">
             <i class="bi bi-person"></i>
             Registrarse
         </button>
     </form>
-    <a href="/logout.php">Volver a intentar</a>
 </div>
